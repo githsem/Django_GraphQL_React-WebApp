@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'myapp',
 ]
 
+GRAPHENE = {
+    'SCHEMA': 'myapp.schema.schema'
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
