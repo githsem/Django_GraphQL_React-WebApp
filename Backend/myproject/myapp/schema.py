@@ -6,11 +6,13 @@ from myapp.models import UserModel
 class UserType(DjangoObjectType):
     class Meta:
         model = UserModel
+
 class Query(graphene.ObjectType):
     users = graphene.List(UserType)
 
     def resolve_users(self, info):
         return UserModel.objects.all()
+
 class CreateUser(graphene.Mutation):
     id = graphene.Int()
     first_name = graphene.String()
@@ -29,6 +31,7 @@ class CreateUser(graphene.Mutation):
             first_name=user.first_name,
             last_name=user.last_name,
         )
+        
 class Mutation(graphene.ObjectType):
     create_user = CreateUser.Field()
 

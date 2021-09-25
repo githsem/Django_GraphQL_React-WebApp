@@ -23,7 +23,6 @@ mutation createUser ($firstName: String!, $lastName: String!){
 }
 `;
 
-
 export function UserInfo() {
 
   // Polling: rovides near-real-time synchronization with your server
@@ -68,7 +67,6 @@ export function CreateUser() {
           }}
           style={{ marginRight: '1em' }}
         />
-
         <label>Last Name: </label>
         <input
           ref={node => {
@@ -80,5 +78,4 @@ export function CreateUser() {
       </form>
     </div>
   );
-
 }
